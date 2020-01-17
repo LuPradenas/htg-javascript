@@ -9,6 +9,7 @@ const inputSolucion = document.querySelector('#input-solucion');
 
 function recibirNombre(event) {
   let comentarios = document.createElement('p');
+  let borrador = setTimeout (enviado ,5000);
   event.preventDefault();
   console.log(event);
 
@@ -16,7 +17,7 @@ function recibirNombre(event) {
   enviado.style.color = 'purple';
 
   comentario.innerText = inputNombre.value + ' ' + inputSolucion.value;
-  comentario.appendChild(comentarios)
+  comentario.appendChild(comentarios);
 
 }
 
@@ -38,4 +39,4 @@ function interceptarNombre(event) {
 
 formulario.addEventListener('submit', recibirNombre);
 inputNombre.addEventListener('input', interceptarNombre);
-inputSolucion.addEventListener('inpur',recibirNombre);
+inputSolucion.addEventListener('input',recibirNombre);
