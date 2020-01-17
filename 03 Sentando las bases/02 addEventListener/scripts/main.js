@@ -9,17 +9,22 @@ const inputSolucion = document.querySelector('#input-solucion');
 
 function recibirNombre(event) {
   let comentarios = document.createElement('p');
-  let borrador = setTimeout (enviado ,5000);
   event.preventDefault();
   console.log(event);
-
+//es para que el mensaje que fue enviado el formulario //
   enviado.innerText =' El formulario se ha enviado correctamente.';
   enviado.style.color = 'purple';
-
-  comentario.innerText = inputNombre.value + ' ' + inputSolucion.value;
+ //esto es para que los comentarios me salgan en la seccion comentarios//
+  comentarios.innerText = inputNombre.value + ' ' + inputSolucion.value;
   comentario.appendChild(comentarios);
 
+  setTimeout(function(){ enviado.innerText = null }, 3000);
+  
+  inputNombre.value = '';
+  inputSolucion.value ='';
+
 }
+
 
 function interceptarNombre(event) {
   let nombre = event.target.value ;
@@ -36,7 +41,8 @@ function interceptarNombre(event) {
    }
    
 }
+ 
 
 formulario.addEventListener('submit', recibirNombre);
 inputNombre.addEventListener('input', interceptarNombre);
-inputSolucion.addEventListener('input',recibirNombre);
+
